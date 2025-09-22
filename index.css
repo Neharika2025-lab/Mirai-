@@ -1,0 +1,85 @@
+/* Container for cards */
+.cards-container {
+  display: inline-block; /* allows multiple cards in a row */
+  text-align: center;
+  gap: 40px;
+  margin-top: 20px;
+  padding-top: 20px;
+}
+
+/* Individual card */
+.card {
+  width: 150px;             
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  background-color: #7dbeb9;
+  text-align: center;
+  display: inline-block;
+  box-shadow: 0px 2px 6px rgba(79, 70, 57, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+/* Card image */
+.card-image {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 6px;
+  display: block;
+  margin: 0 auto 10px;
+}
+
+/* Card title */
+.card-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+}
+
+/* Header */
+header {
+  background-color: #7dbeb9;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Home buttons container */
+.home-buttons-container {
+  text-align: center;
+  margin-top: 100px;
+  gap: 15px;
+  display: inline-flex;
+}
+
+/* Buttons: Home, About, Login */
+.nav-button {
+  padding: 12px 25px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #fff;                     /* white text */
+  background-color: #7dbeb9;       /* same as header/cards */
+  border: none;
+  border-radius: 12px;             /* same as cards */
+  cursor: pointer;
+  box-shadow: 0px 2px 6px rgba(79, 70, 57, 0.1);
+  transition: all 0.3s ease;
+}
+
+/* Hover effect for buttons */
+.nav-button:hover {
+  background-color: #6aa39a;       /* slightly darker shade */
+  transform: scale(1.05);
+}
+
+
