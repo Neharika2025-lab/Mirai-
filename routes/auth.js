@@ -5,7 +5,7 @@ import db from "../db.js"; //connects the sqllite database
 
 const router = express.Router();
 
-router.post("/register", async (req, res) => {        //creates an asynchronous signup end point
+router.post("/signup", async (req, res) => {        //creates an asynchronous signup end point
   const { name, email, password } = req.body;   //extracts data from request body
 
   if (!name || !email || !password) {    //if any of the fields is empty then prompt user to enter data
@@ -15,12 +15,13 @@ router.post("/register", async (req, res) => {        //creates an asynchronous 
   const passwordHash = await bcrypt.hash(password, 10); //hashes the password using 10 salt rounds---increases security by avoiding saving of plain text
 
   db.run(
-    "INSERT INTO users (name, email, password_hash, role) VALUES (?, ?, ?)", //insert values into database
+    "INSERT INTO users (name, email, password_hash) VALUES (?, ?, ?)", //insert values into database
     [name, email, passwordHash],
     function (err) { //callback runs after query finished
-      if (err) {
-        return res.status(400).json({ error: "Email already exists" });
-      }
+    if (err) {
+      console.error(err.message);  // log real SQLite error
+      return res.status(400).json({ error: "email exists" });
+    }
       res.json({ success: true, userId: this.lastID }); //this.lastID--gives new user id
     }
   );
