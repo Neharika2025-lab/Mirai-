@@ -1,0 +1,60 @@
+/* Parent container centers everything on the page */
+.cards-container {
+  display: flex;
+  flex-direction: column;    /* stack items vertically */
+  align-items: center;       /* center horizontally */
+  justify-content: center;   /* center vertically */
+  min-height: 100vh;         /* full screen height */
+  background: #051513;
+  gap: 40px;                 /* space between sign in and others */
+}
+
+/* Top card (Sign In) */
+.card.signin {
+  width: 200px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background: #011014;
+  text-align: center;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+  font-weight: bold;
+}
+
+/* Container for Home and About */
+.bottom-cards {
+  display: flex;
+  gap: 20px;                  /* spacing between home/about */
+  justify-content: center;
+}
+
+/* General card style */
+.card {
+  width: 150px;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background: #021012;
+  text-align: center;
+  box-shadow: 0px 2px 6px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+/* Image styling */
+.card-image {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Title styling */
+.card-title {
+  margin-top: 10px;
+  font-size: 1.1rem;
+  color: #333;
+}
